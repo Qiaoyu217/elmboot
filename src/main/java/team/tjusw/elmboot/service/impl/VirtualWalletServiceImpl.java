@@ -4,6 +4,7 @@ import team.tjusw.elmboot.domain.Transaction;
 import team.tjusw.elmboot.domain.VirtualWallet;
 import team.tjusw.elmboot.mapper.TransactionMapper;
 import team.tjusw.elmboot.mapper.VirtualWalletMapper;
+import team.tjusw.elmboot.service.VirtualWalletService;
 import team.tjusw.elmboot.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Service
-public class VirtualWalletServiceImpl implements VirtualWalletService{
+public class VirtualWalletServiceImpl implements VirtualWalletService {
 	
 	@Autowired
 	private VirtualWalletMapper virtualwalletMapper;
