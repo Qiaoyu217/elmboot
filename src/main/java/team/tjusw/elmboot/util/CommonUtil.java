@@ -1,6 +1,7 @@
 package team.tjusw.elmboot.util;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class CommonUtil {
@@ -12,4 +13,10 @@ public class CommonUtil {
 		return dataStr;
 	}
 
+	public static String getNextData(int time) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DATE, time);
+		return sdf.format(calendar.getTime());
+	}
 }
