@@ -9,7 +9,7 @@ import java.sql.Statement;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+import org.apache.commons.text.StringEscapeUtils;
 
 public class World {
     public void deserializeData(byte[] data) {
@@ -50,7 +50,7 @@ public class World {
         String userInput = request.getParameter("input");
         response.setContentType("text/html");
         response.getWriter().println("<html><body>");
-        response.getWriter().println("<h1>User Input: " + userInput + "</h1>");
+        response.getWriter().println("<h1>User Input: " + StringEscapeUtils.escapeHtml4(userInput) + "</h1>");
         response.getWriter().println("</body></html>");
 
     }
