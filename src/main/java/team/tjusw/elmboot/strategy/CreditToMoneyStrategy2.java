@@ -1,16 +1,18 @@
 package team.tjusw.elmboot.strategy;
 
-public class CreditToMoneyStrategy2 extends CreditToMoneyStrategy{
+public class CreditToMoneyStrategy2 extends CreditToMoneyStrategy {
 
-	@Override
-	public double creditToMoney(Integer credit) {
-		return credit * 0.02;
-	}
+    private static final double CREDIT_TO_MONEY_RATE = 0.02;
+    private static final double MONEY_TO_CREDIT_RATE = 50;
 
-	@Override
-	public int moneyBackTocredit(double money) {
-		// TODO Auto-generated method stub
-		return (int)(money * 50);
-	}
+    @Override
+    public double creditToMoney(Integer credit) {
+        return credit * CREDIT_TO_MONEY_RATE;
+    }
+
+    @Override
+    public int moneyBackToCredit(double money) {
+        return (int)(money * MONEY_TO_CREDIT_RATE);
+    }
 
 }

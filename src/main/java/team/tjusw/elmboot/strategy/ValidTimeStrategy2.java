@@ -6,6 +6,7 @@ public class ValidTimeStrategy2 extends ValidTimeStrategy{
 	public int validTime() {
 		// TODO Auto-generated method stub
 		return 20;
+
 	}
 	
 }
