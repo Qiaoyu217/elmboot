@@ -13,14 +13,16 @@ public class CommonUtil {
 		String dataStr = formatter.format(date);
 		return dataStr;
 	}
+
 	public static String pullRequestTest(){
 		return "pull request test";
 	}
 
-	public static String getNextData(int time) {
+	public static String getNextDate(int days) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DATE, time);
+		calendar.add(Calendar.DATE, days);
+
 		return sdf.format(calendar.getTime());
 	}
 }

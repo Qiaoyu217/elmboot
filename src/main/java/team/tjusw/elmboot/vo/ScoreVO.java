@@ -13,8 +13,7 @@ public class ScoreVO {
 	private String expireDate;
 	
 	ValidTimeStrategy validTimeStrategy = new ValidTimeStrategy1();
-	private Integer time = validTimeStrategy.validTime();
-	
+	private Integer time;
 	public ScoreVO() {
 		
 	}
@@ -31,11 +30,15 @@ public class ScoreVO {
 		return userId;
 	}
 
+
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
 	public Integer getTime() {
+		if (time == null) {
+			time = validTimeStrategy.validTime();
+		}
 		return time;
 	}
 

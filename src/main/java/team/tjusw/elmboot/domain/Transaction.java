@@ -6,44 +6,45 @@ public class Transaction {
 	private Integer transactionId;
 	private String transactionDate;
 	private BigDecimal transactionAmount;
-	private int transactionType;// 0为支付，1为充值，2为提现
-	private int entryWalletId;// 入账钱包 	提现时为null
-	private int expendWalletId;//出账钱包 	充值时为null
+	private Integer transactionType; // 0为支付，1为充值，2为提现
+	private Integer entryWalletId; // 入账钱包 	提现时为null
+
+	private Integer expendWalletId; //出账钱包 	充值时为null
 	
-	public int gettransactionId() {
+	public Integer getTransactionId() {
 		return transactionId;
 	}
-	public void settransactionId(Integer transactionId) {
+	public void setTransactionId(Integer transactionId) {
 		this.transactionId = transactionId;
 	}
-	public String gettransactionDate() {
+	public String getTransactionDate() {
 		return transactionDate;
 	}
-	public void settransactionDate(String transactionDate) {
+	public void setTransactionDate(String transactionDate) {
 		this.transactionDate = transactionDate;
 	}
-	public BigDecimal gettransactionAmount() {
+	public BigDecimal getTransactionAmount() {
 		return transactionAmount;
 	}
-	public void settransactionAmount(BigDecimal transactionAmount) {
+	public void setTransactionAmount(BigDecimal transactionAmount) {
 		this.transactionAmount = transactionAmount;
 	}
-	public int gettransactionType() {
+	public Integer getTransactionType() {
 		return transactionType;
 	}
-	public void settransactionType(int transactionType) {
+	public void setTransactionType(Integer transactionType) {
 		this.transactionType = transactionType;
 	}
-	public int getentryWalletId() {
+	public Integer getEntryWalletId() {
 		return entryWalletId;
 	}
-	public void setentryWalletId(int entryWalletId) {
+	public void setEntryWalletId(Integer entryWalletId) {
 		this.entryWalletId = entryWalletId;
 	}
-	public int getexpendWalletId() {
+	public Integer getExpendWalletId() {
 		return expendWalletId;
 	}
-	public void setexpendWalletId(int expendWalletId) {
+	public void setExpendWalletId(Integer expendWalletId) {
 		this.expendWalletId = expendWalletId;
 	}
 	

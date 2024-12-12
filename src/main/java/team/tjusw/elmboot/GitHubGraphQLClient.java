@@ -49,27 +49,7 @@ public class GitHubGraphQLClient {
     }
 
     private static String escapeKeyword(String keyword) {
-        // 实现关键词转义逻辑
-        return keyword.replaceAll("(["\\])", "\\$1");
-    }
-
-    private static String executeGraphQLQuery(String query) throws IOException {
-        OkHttpClient client = new OkHttpClient();
-        RequestBody body = RequestBody.create(query, MediaType.parse("application/json"));
-        Request request = new Request.Builder()
-                .url(GITHUB_GRAPHQL_URL)
-                .header("Authorization", "Bearer " + GITHUB_TOKEN)
-                .post(body)
-                .build();
-
-        try (Response response = client.newCall(request).execute()) {
-            if (!response.isSuccessful()) {
-                throw new IOException("Unexpected code: " + response.code() + ", message: " + response.message(), response.message());
-            }
-            String responseBody = response.body().string();
-            response.body().close();
-            return responseBody;
-        }
+        return keyword.replaceAll("(["'\\])", "\\\\$1");
     }
 
     private static List<String> parseRepositoryUrls(String json) throws IOException {
